@@ -1,34 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
- 
-  //   class Animal {
-  //     constructor(weight, heigt, color) {
-  //       this.weight = weight;
-  //       this.heigt = heigt;
-  //       this.color = color;
-  //     }
-  //     eat() {
-  //       console.log("кушает");
-  //     }
-  //     sleep() {
-  //       console.log("спит");
-  //     }
-  //   }
-  //   class Dog extends Animal {
-  //     bark() {
-  //       console.log("гавкает");
-  //     }
-  //   }
-  //   class Shepherd extends Dog {
-  //     guard() {
-  //       console.log("защищает");
-  //     }
-  //   }
-  //   let dog = new Shepherd(10, 5, "Черный");
-  //   dog.eat();
-  //   console.log(dog.color);
-
+  
   class Shape {
-    constructor(height, width, color) {
+    constructor(color, height, width = height) {
       this.height = height;
       this.width = width;
       this.color = color;
@@ -42,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
       document.body.append(this.div);
     }
   }
-  class Cirkle extends Shape {
+  class Circle extends Shape {
     radius() {
       this.div.style.borderRadius = "50%";
     }
@@ -51,9 +24,16 @@ document.addEventListener("DOMContentLoaded", function() {
       this.radius();
     }
   }
-  let c = new Cirkle(50, 50, "black");
+  let circle1 = new Circle("green", 150);
+  circle1.draw();
 
-  c.draw();
-  c.draw();
-  c.draw();
+  class Square extends Shape {}
+
+  let square1 = new Square("red", 50);
+  square1.draw();
+
+  class Rectangle extends Shape {}
+
+  let rectangle1 = new Rectangle("blue", 250, 100);
+  rectangle1.draw();
 });
